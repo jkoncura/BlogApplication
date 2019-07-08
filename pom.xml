@@ -51,9 +51,6 @@
 		    <version>2.3.5.RELEASE</version>
 		</dependency>
 		
-	
-
-
 		<dependency>
 		    <groupId>javax.activation</groupId>
 		    <artifactId>activation</artifactId>

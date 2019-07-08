@@ -23,7 +23,6 @@ public class UserController {
     @Autowired
     private TokenStore tokenStore;
 
-
     @PostMapping(value = "/register")
     public String register(@RequestBody UserRegistration userRegistration){
         if(!userRegistration.getPassword().equals(userRegistration.getPasswordConfirmation()))
@@ -54,7 +53,5 @@ public class UserController {
     public String getUsername(){
         return SecurityContextHolder.getContext().getAuthentication().getName();
     }
-
-
 
 }

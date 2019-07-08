@@ -16,11 +16,17 @@ public class UserService {
 	 @Autowired
 	 private UserRepo userRepository;
 	 
-	 @Autowired
-	 private PasswordEncoder passwordEncoder;
+//	 @Autowired
+//	 private PasswordEncoder passwordEncoder;
+	 
+	 @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+     }
 
 	 public void save(User user){
-		user.setPassword(passwordEncoder.encode(user.getPassword()));
+		user.setPassword(passwordEncoder().encode(user.getPassword()));
+		 //user.setPassword(user.getPassword());
 	 	userRepository.save(user);
 	 }
 
