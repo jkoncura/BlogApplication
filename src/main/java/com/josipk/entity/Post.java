@@ -62,5 +62,4 @@ public class Post {
 	public void setCreator(User creator) {
 		this.creator = creator;
 	}
-	
 }

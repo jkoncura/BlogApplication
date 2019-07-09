@@ -3,6 +3,7 @@ package com.josipk;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,6 +17,7 @@ import com.josipk.service.UserService;
 import java.util.Arrays;
 
 @SpringBootApplication
+@ComponentScan("com.josipk")
 public class BlogApplication {
 	
 	@Autowired
@@ -47,6 +49,6 @@ public class BlogApplication {
 	 */
 	private UserDetailsService userDetailsService(final UserRepo repository) {
 		return username -> new CustomUserDetails(repository.findByUsername(username));
-}
+	}
 
 }
